@@ -1,7 +1,7 @@
 let url = 'http://localhost:90/gsb/praticien/'
 
 // afficher dans la console tout les praticiens de marseille
-fetch(url + "?adresse=marseille")
+fetch(url + "?adresse=Marseille")
 .then(response => response.json())
 .then((data)=>{
     data.forEach(element => {
@@ -9,7 +9,7 @@ fetch(url + "?adresse=marseille")
     });
 });
 
-// afficher dans la console tout les dentistes de Paris
+// // afficher dans la console tout les dentistes de Paris
 
 fetch(url +"?adresse=Paris&specialite=dentiste")
 .then(response => response.json())
@@ -20,23 +20,22 @@ fetch(url +"?adresse=Paris&specialite=dentiste")
 });
 
 
-
-// afficher dans la console tout les praticiens déjà visités
+// // afficher dans la console tout les praticiens déjà visités
 
 fetch(url +"?visite=true")
 .then(response => response.json())
 .then((data) =>{
     data.forEach(element =>{
-        console.log("Les praticien déjà visité sont " + element.nom);
+        console.log("Les praticiens déjà visité sont " + element.nom);
     });
 });
 
-// afficher dans la console tout les dentistes de Marseille qui ont été visité
+// // afficher dans la console tout les dentistes de Marseille qui ont été visité
 
-fetch(url +"?specialite=dentiste&adresse=marseille&visite=true")
+fetch(url +"?visite=truee&adresse=Marseille&specialite=dentist")
 .then(response => response.json())
 .then((data) =>{
     data.forEach(element =>{
-        console.log("Les praticien déjà visité sont " + element.nom);
+        console.log("Les dentistes de Marseille déjà visité sont " + element.nom);
     });
 });
